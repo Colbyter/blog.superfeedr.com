@@ -150,6 +150,26 @@ def post(self):
 
 {% endprism %}
 
+### Itty framework
+Pull Post requests using the little lightweight  with itty framework
+https://github.com/toastdriven/itty
+
+from itty import *
+import json 
+import urllib , urllib2
+import os
+
+@post('/')
+def index(request):
+    response =  request.body
+    res = response.read()
+    print res
+    
+    return 'Ok'
+    
+port = 8080
+run_itty(server='wsgiref', host='0.0.0.0', port=port)
+
 ### C# (ASP.NET)
 
 Using the Request.InputStream property, data can be read in a raw fashion as binary, or using a [System.IO.StreamReader](https://msdn.microsoft.com/de-de/library/system.io.streamreader%28v=vs.110%29.aspx) it can be read as test. This can be done multiple times.
